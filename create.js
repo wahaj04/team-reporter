@@ -18,16 +18,16 @@ document.getElementById("submitTeam").addEventListener("click", function (event)
 });
 
 
-function createTeam(){
-    let name= document.getElementById("teamname").value
-    let categoryname= document.getElementById("categoryname").value
-    let membersemail= document.getElementById("membersemail").value
-    
+function createTeam() {
+    const name = document.getElementById("teamname").value;
+    const categoryname = document.getElementById("categoryname").value;
+    const membersemail = document.getElementById("membersemail").value;
+
     firebase.database().ref('Team').push({
         name: name,
         category: categoryname,
         members: membersemail,
         createdAt: new Date().getTime()
     })
-    name =""
-}   
+    name = "";
+}
